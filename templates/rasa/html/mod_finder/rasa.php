@@ -29,10 +29,10 @@ $output = '';
 
 if ($params->get('show_button', 0))
 {
-	$output .= $label;
-	$output .= '<div class="mod-finder__search input-group">';
+	/* $output .= $label; */
+	$output .= '<div class="uk-position-relative mod-finder__search input-group">';
 	$output .= $input;
-	$output .= '<button class="btn btn-primary" type="submit"><span class="icon-search icon-white" aria-hidden="true"></span> ' . Text::_('JSEARCH_FILTER_SUBMIT') . '</button>';
+	$output .= '<button class="uk-position-center-left uk-button uk-button-link" type="submit"><span class="fas fa-search"></span></button>';
 	$output .= '</div>';
 }
 else
