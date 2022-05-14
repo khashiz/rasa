@@ -36,6 +36,19 @@
 
 	<!-- Add fields to the parameters object for the layout. -->
 	<fields name="params">
+		<fieldset name="pagelayout">
+			<field name="mainpadding" label="NTP_MAIN_PADDING" default="0" type="radio" class="btn-group btn-group-yesno">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="gridsize" label="NTP_GRID_SIZE" default="uk-container" type="list">
+				<option value="uk-container uk-container-xsmall">NTP_XSMALL</option>
+				<option value="uk-container uk-container-small">NTP_SMALL</option>
+				<option value="uk-container">NTP_NORMAL</option>
+				<option value="uk-container uk-container-large">NTP_LARGE</option>
+				<option value="uk-container uk-container-expanded">NTP_EXPANDED</option>
+			</field>
+		</fieldset>
 		<fieldset name="basic" label="JGLOBAL_CATEGORY_OPTIONS">
 				<field
 					name="layout_type"

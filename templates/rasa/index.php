@@ -181,20 +181,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <?php if ($this->countModules('topout', true)) : ?>
         <jdoc:include type="modules" name="topout" style="html5" />
     <?php endif; ?>
-    <?php if ($this->countModules('icons', true)) : ?>
-    <div class="uk-padding-large uk-padding-remove-horizontal uk-background-muted">
-        <div class="uk-container">
-            <div>
-                <div class="uk-child-width-1-1 uk-child-width-1-4@m uk-grid-divider" data-uk-grid data-uk-scrollspy="target: > *; cls: uk-animation-slide-bottom-small; delay: 250; offset-top:-300;"><jdoc:include type="modules" name="icons" style="html5" /></div>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
-    <main>
+    <main class="<?php if ($pageparams->get('mainpadding')) { echo 'uk-padding-large uk-padding-remove-horizontal';} ?>">
         <?php if ($this->countModules('topin', true)) : ?>
             <jdoc:include type="modules" name="topin" style="html5" />
         <?php endif; ?>
-        <div>
+        <div class="<?php echo $pageparams->get('gridsize', '') ?>">
             <div class="uk-grid-divider" data-uk-grid>
                 <?php if ($this->countModules('sidestart', true)) : ?>
                     <aside class="uk-width-1-1 uk-width-1-4@m uk-visible@m">

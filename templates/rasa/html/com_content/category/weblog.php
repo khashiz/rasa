@@ -33,7 +33,7 @@ $afterDisplayContent = trim(implode("\n", $results));
 $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
 ?>
-<div class="uk-padding-large uk-padding-remove-horizontal com-content-category-blog blog" itemscope itemtype="https://schema.org/Blog">
+<div class="uk-child-width-1-1 uk-grid-divider com-content-category-blog blog" itemscope itemtype="https://schema.org/Blog" data-uk-grid>
 
 	<?php if ($this->params->get('show_category_title', 1)) : ?>
 	<<?php echo $htag; ?>>
@@ -79,17 +79,19 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>
-		<div class="com-content-category-blog__items blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>">
-			<?php foreach ($this->lead_items as &$item) : ?>
-				<div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-					<?php
-					$this->item = &$item;
-					echo $this->loadTemplate('item');
-					?>
-				</div>
-				<?php $leadingcount++; ?>
-			<?php endforeach; ?>
-		</div>
+        <div>
+            <div class="uk-grid-divider uk-child-width-1-1 com-content-category-blog__items blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>" data-uk-grid>
+                <?php foreach ($this->lead_items as &$item) : ?>
+                    <div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                        <?php
+                        $this->item = &$item;
+                        echo $this->loadTemplate('item');
+                        ?>
+                    </div>
+                    <?php $leadingcount++; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
 	<?php endif; ?>
 
 	<?php
@@ -131,9 +133,9 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         </div>
 	<?php endif; ?>
 	<?php if (($this->params->def('show_pagination', 1) == 1 || ($this->params->get('show_pagination') == 2)) && ($this->pagination->pagesTotal > 1)) : ?>
-		<div class="com-content-category-blog__navigation w-100">
+		<div class="com-content-category-blog__navigation">
 			<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-				<p class="com-content-category-blog__counter counter float-end pt-3 pe-2">
+				<p class="com-content-category-blog__counter counter">
 					<?php echo $this->pagination->getPagesCounter(); ?>
 				</p>
 			<?php endif; ?>
