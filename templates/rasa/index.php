@@ -46,6 +46,7 @@ JHtml::_('stylesheet', 'rasa.css', array('version' => 'auto', 'relative' => true
 JHtml::_('script', 'uikit.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'uikit-icons.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'particles.min.js', array('version' => 'auto', 'relative' => true));
+JHtml::_('script', 'plyr.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
 
 // Detecting Active Variables
@@ -84,7 +85,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                        <div></div>
+                        <jdoc:include type="modules" name="lang" style="xhtml" />
                     </div>
                 </div>
             </div>
@@ -172,7 +173,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
             <span class="uk-position-cover" id="hParticles"></span>
             <div class="uk-position-relative">
                 <div class="uk-container">
-                    <h1 class="font uk-text-center uk-h1 uk-text-white uk-text-heavy"><?php echo $pageparams->get('page_heading'); ?></h1>
+                    <h2 class="font f900 uk-text-center uk-h1 uk-text-white uk-text-heavy"><?php echo $pageparams->get('page_heading'); ?></h2>
                     <jdoc:include type="modules" name="breadcrumbs" style="html5" />
                 </div>
             </div>

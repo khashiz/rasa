@@ -20,12 +20,15 @@
 .f500{font-variation-settings: "wght" 500, "dots" 5;}
 .f600{font-variation-settings: "wght" 600, "dots" 5;}
 .f700{font-variation-settings: "wght" 700, "dots" 5;}
+.f800{font-variation-settings: "wght" 800, "dots" 5;}
+.f900{font-variation-settings: "wght" 900, "dots" 5;}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
+.cursorPointer{cursor: pointer}
 
 // Mixins
 .border-radius (@radius: 5px) {
@@ -111,12 +114,15 @@ hr{
   }
 }
 .uk-button{
+  .transition(.2s all ease-out);
   i{
     font-size: 16px;
   }
+  &.uk-button-small{
+    font-size: 12px;
+  }
   &.uk-button-primary{
     background-color: @primary;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
     font-variation-settings: "wght" 700, "dots" 5;
     .font;
     &:hover{
@@ -125,6 +131,16 @@ hr{
     &:active,
     &:focus{
       background-color: darken(@primary, 15%);
+    }
+    &.uk-button-outline{
+      background-color: #fff;
+      color: @primary;
+      .box-shadow(0 0 0 2px @primary);
+      &:hover{
+        background-color: @primary;
+        color: #fff;
+        .box-shadow(0 0 0 2px transparent);
+      }
     }
   }
   &.uk-button-instagram{
@@ -440,11 +456,6 @@ fieldset{
   outline: none;
 }
 section{
-  &.pageHead{
-    h1{
-      font-variation-settings: "wght" 900,"dots" 11;
-    }
-  }
   &.locations{
     .wrapper{
       overflow: hidden;
@@ -544,6 +555,12 @@ ol{
     font-variation-settings: "wght" 900,"dots" 5;
     margin: 0;
     .font;
+    &.light{
+      color: #fff;
+    }
+    &.mainTitle{
+      font-size: 48px;
+    }
   }
   @media(min-width: 960px){
     &.side{
@@ -702,5 +719,38 @@ ol{
         color: @primary;
       }
     }
+  }
+}
+.servicesTabs{
+  > li{
+    > span{
+      background-color: #fff;
+      color: #222;
+      i{
+        color: @primary;
+      }
+    }
+    &.uk-active{
+      > span{
+        background-color: @primary;
+        color: #fff;
+        i{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.hasShadow{
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .8);
   }
 }
