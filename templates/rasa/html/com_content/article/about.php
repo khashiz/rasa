@@ -42,7 +42,7 @@ endforeach;
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
 
     <div class="uk-container uk-container-xsmall">
-        <video class="uk-border-rounded uk-overflow-hidden uk-box-shadow-large uk-margin-large-bottom" id="player" playsinline controls data-poster="<?php echo $fieldsRawValue['posterurl']; ?>">
+        <video class="uk-border-rounded uk-overflow-hidden uk-box-shadow-large uk-margin-large-bottom uk-width-1-1" id="player" playsinline controls poster="<?php echo $fieldsRawValue['posterurl']; ?>">
             <source src="<?php echo $fieldsRawValue['videourl']; ?>" type="video/mp4" />
         </video>
     </div>
@@ -96,7 +96,55 @@ endforeach;
     <div itemprop="articleBody" class="font f500 uk-text-small uk-text-black com-content-article__body">
         <?php echo $this->item->text; ?>
     </div>
+
     </div>
+
+
+<section class="uk-margin-large-top uk-background-muted uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-background-cover uk-background-center-center hasShadow benefits" style="background-image: url(https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80); background-repeat: no-repeat; background-position-y: calc(-360.112px); background-size: 1903px 1269px;" data-uk-parallax="bgy: -200">
+    <div class="uk-container uk-container-small uk-position-relative">
+        <div class="uk-text-center">
+            <div class="uk-margin-medium-bottom uk-text-center styledTitle">
+                <span>خدمات ما</span>
+                <h2 class="light">مسیر طلایی راسا چه خدماتی ارائه می کند ؟</h2>
+            </div>
+            <div class="uk-text-white font f600 uk-margin-large-bottom">
+                <p>ما در شرکت حمل و نقل بین المللی مسیر طلایی راسا ، پاسخگوی تمامی نیاز های شما در زمینه حمل و نقل به تمام نقاط دنیا هستیم.</p>
+            </div>
+            <div class="uk-child-width-1-5 uk-flex-center uk-text-center uk-grid-small" data-uk-grid>
+                <div>
+                    <a class="uk-display-block uk-link-reset" href="#">
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل هوایی</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="uk-display-block uk-link-reset" href="#">
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-ship fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل دریایی</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="uk-display-block uk-link-reset" href="#">
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-container fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل زمینی</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="uk-display-block uk-link-reset" href="#">
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترخیص کالا</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="uk-display-block uk-link-reset" href="#">
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-globe fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت داخلی و خارجی</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 	<?php if ($params->get('access-view')) : ?>

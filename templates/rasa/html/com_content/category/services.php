@@ -113,23 +113,37 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         </div>
 	<?php endif; ?>
 
-<div class="uk-background-muted uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-background-cover uk-background-center-center hasShadow" style="background-image: url('https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');" data-uk-parallax="bgy: -200">
+<section class="uk-margin-large-top uk-background-muted uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-background-cover uk-background-center-center hasShadow benefits" style="background-image: url(https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80); background-repeat: no-repeat; background-position-y: calc(-360.112px); background-size: 1903px 1269px;" data-uk-parallax="bgy: -200">
     <div class="uk-container uk-container-small uk-position-relative">
         <div class="uk-text-center">
             <div class="uk-margin-medium-bottom uk-text-center styledTitle">
-                <span>حمل و نقل دریایی</span>
-                <h2 class="light">نگران حجم بار برای ارسال نباشید !</h2>
+                <span>مزایای خدمات ما</span>
+                <h2 class="light">چرا مسیر طلایی راسا را انتخاب کنیم ؟</h2>
             </div>
             <div class="uk-text-white font f600 uk-margin-large-bottom">
                 <p>ما در شرکت حمل و نقل بین المللی مسیر طلایی راسا ، بار شما را در هر مقداری از خرده بار تا بار فله ای یا کانتینری به مقصد می رسانیم !</p>
-                <p>فقط کافیست تا با متحصصین ما در بخش حمل و نقل و دریایی تماس حاصل نمایید.</p>
             </div>
-            <div>
-                <a class="uk-button uk-button-primary uk-border-pill uk-box-shadow-small uk-width-1-1 uk-width-medium@s" href="#">تماس با ما</a>
+            <div class="uk-child-width-1-5 uk-flex-center uk-text-center" data-uk-grid>
+                <div>
+                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-headset fa-fw fa-3x"></i></span>
+                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">کارشناسان پشتیبانی ۲۴ ساعته</span>
+                </div>
+                <div>
+                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
+                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">انجام تشریفات و خدمات گمرکی</span>
+                </div>
+                <div>
+                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
+                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت کالا به تمام نقاط دنیا</span>
+                </div>
+                <div>
+                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-circle-info fa-fw fa-3x"></i></span>
+                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ارسال آپدیت های لازم در طول مسیر</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 	<?php
 	$introcount = count($this->intro_items);
@@ -148,7 +162,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                     <span>خدمات دیگر</span>
                     <h2>همراه شما در واردات و صادرات هستیم !</h2>
                 </div>
-                <div class="uk-child-width-1-3" data-uk-grid>
+                <div class="uk-child-width-1-3 uk-flex-center" data-uk-grid>
                     <?php foreach ($this->intro_items as $key => &$item) : ?>
                         <div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                             <?php

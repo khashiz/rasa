@@ -212,8 +212,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
         <span class="uk-position-cover" id="fParticles"></span>
         <div class="uk-padding uk-padding-remove-horizontal uk-position-relative modules">
             <div class="uk-container">
-                <div class="uk-grid-large uk-flex-between uk-child-width-auto" data-uk-grid>
-                    <div>
+                <div class="uk-grid-larg uk-flex-between uk-child-width-auto" data-uk-grid>
+                    <div class="uk-width-expand">
                         <div class="uk-margin-bottom borderedSection">
                             <span class="uk-display-block uk-text-primary uk-h4 uk-margin-small-bottom font">با ما تماس بگیرید</span>
                             <a href="" class="uk-display-block uk-text-white uk-text-right font ltr">(+۹۸۲۱) ۳۴۵۶ ۸۷۵۹</a>
@@ -228,7 +228,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                         </ul>
                     </div>
                     <jdoc:include type="modules" name="footer" style="html5" />
-                    <div class="uk-width-1-1 uk-width-1-3@m help">
+                    <div class="uk-width-1-1 uk-width-1-4@m help">
                         <h4>به کمک نیاز دارید ؟</h4>
 <!--                        <div class="uk-cover-container uk-margin-bottom">-->
 <!--                            <canvas width="400" height="150"></canvas>-->
