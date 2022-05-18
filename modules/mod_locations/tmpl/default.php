@@ -38,8 +38,8 @@ $params = $app->getTemplate(true)->params;
             <div>
                 <div class="uk-height-1-1 wrapper">
                     <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
-                        <div class="uk-width-auto"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21794.00023647139!2d51.325854430204544!3d35.70906049082739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xda1bf08cf9bd7464!2zMzXCsDQyJzI2LjciTiA1McKwMTknNTcuOCJF!5e0!3m2!1sen!2s!4v1652434635036!5m2!1sen!2s" width="220" height="250" class="uk-height-1-1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                        <div class="uk-width-expand">
+                        <div class="uk-width-1-1 uk-width-auto@s"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21794.00023647139!2d51.325854430204544!3d35.70906049082739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xda1bf08cf9bd7464!2zMzXCsDQyJzI2LjciTiA1McKwMTknNTcuOCJF!5e0!3m2!1sen!2s!4v1652434635036!5m2!1sen!2s" width="220" height="250" class="uk-height-1-1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                        <div class="uk-width-1-1 uk-width-expand@s">
                             <div class="uk-padding uk-height-1-1">
                                 <h3 class="font f700 uk-position-relative uk-text-black">دفتر مرکزی</h3>
                                 <ul class="uk-list uk-margin-remove uk-text-zero">

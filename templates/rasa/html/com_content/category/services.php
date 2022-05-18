@@ -89,9 +89,9 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                             <li>
                                 <span class="uk-flex uk-flex-center uk-flex-middle uk-flex-column uk-border-rounded uk-box-shadow-small uk-padding cursorPointer">
                                     <?php if (!empty(json_decode($item->urls)->urlatext)) { ?>
-                                        <i class="uk-margin-small-bottom far fa-3x fa-fw fa-<?php echo json_decode($item->urls)->urlatext; ?>"></i>
+                                        <i class="far fa-3x fa-fw fa-<?php echo json_decode($item->urls)->urlatext; ?>"></i>
                                     <?php } ?>
-                                    <span class="font f700"><?php echo $item->title; ?></span>
+                                    <span class="uk-margin-small-top font f700 uk-visible@s"><?php echo $item->title; ?></span>
                                 </span>
                             </li>
                         <?php endforeach; ?>
@@ -123,22 +123,27 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
             <div class="uk-text-white font f600 uk-margin-large-bottom">
                 <p>ما در شرکت حمل و نقل بین المللی مسیر طلایی راسا ، بار شما را در هر مقداری از خرده بار تا بار فله ای یا کانتینری به مقصد می رسانیم !</p>
             </div>
-            <div class="uk-child-width-1-5 uk-flex-center uk-text-center" data-uk-grid>
-                <div>
-                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-headset fa-fw fa-3x"></i></span>
-                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">کارشناسان پشتیبانی ۲۴ ساعته</span>
+            <div class="uk-position-relative uk-visible-toggle" data-uk-slider>
+                <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-text-center uk-grid uk-grid-small">
+                    <div>
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-headset fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">کارشناسان پشتیبانی ۲۴ ساعته</span>
+                    </div>
+                    <div>
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">انجام تشریفات و خدمات گمرکی</span>
+                    </div>
+                    <div>
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت کالا به تمام نقاط دنیا</span>
+                    </div>
+                    <div>
+                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-circle-info fa-fw fa-3x"></i></span>
+                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ارسال آپدیت های لازم در طول مسیر</span>
+                    </div>
                 </div>
-                <div>
-                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
-                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">انجام تشریفات و خدمات گمرکی</span>
-                </div>
-                <div>
-                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
-                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت کالا به تمام نقاط دنیا</span>
-                </div>
-                <div>
-                    <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-circle-info fa-fw fa-3x"></i></span>
-                    <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ارسال آپدیت های لازم در طول مسیر</span>
+                <div class="uk-light">
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-hidden@s"></ul>
                 </div>
             </div>
         </div>
@@ -162,7 +167,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                     <span>خدمات دیگر</span>
                     <h2>همراه شما در واردات و صادرات هستیم !</h2>
                 </div>
-                <div class="uk-child-width-1-3 uk-flex-center" data-uk-grid>
+                <div class="uk-child-width-1-1 uk-child-width-1-3@s uk-flex-center" data-uk-grid>
                     <?php foreach ($this->intro_items as $key => &$item) : ?>
                         <div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                             <?php

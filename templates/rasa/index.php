@@ -65,13 +65,15 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="<?php echo $params->get('presetcolor'); ?>">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
 	<jdoc:include type="metas" />
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </head>
 <body class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task') . ($itemid ? ' itemid-' . $itemid : '') . ($pageclass ? ' ' . $pageclass : '') . ($this->direction == 'rtl' ? ' rtl' : ''); ?>">
-    <header>
-        <div class="uk-background-secondary uk-text-zero bar">
+    <header class="uk-position-relative uk-position-z-index uk-box-shadow-medium">
+        <div class="uk-background-secondary uk-text-zero bar uk-visible@s">
             <div class="uk-container">
                 <div>
                     <div class="uk-child-width-auto uk-flex-between" data-uk-grid>
@@ -94,18 +96,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
             <div class="uk-container">
                 <div class="wrapper">
                     <div class="uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-auto uk-hidden@m uk-flex uk-flex-middle">
-                            <div class="uk-padding-small uk-padding-remove-horizontal uk-height-1-1">
-                                <a href="#hamMenu" data-uk-toggle class="uk-button uk-button-default uk-padding-small uk-box-shadow-small uk-border-rounded uk-line-height-zero"><i class="far fa-bars fa-fw"></i></a>
-                            </div>
+                        <div class="uk-width-auto uk-hidden@s uk-flex uk-flex-middle uk-text-black">
+                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x uk-margin-small-right"></i></a>
                         </div>
-                        <div class="uk-width-auto uk-visible@m">
+                        <div class="uk-width-auto uk-visible@s">
                             <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-rtl.svg'; ?>" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
-                        <div class="uk-width-expand uk-hidden@m uk-flex uk-flex-middle uk-flex-center">
-                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php // echo JUri::base().'images/sprite.svg#logo'; ?>" width="" height="40" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                        <div class="uk-width-expand uk-hidden@s uk-flex uk-flex-middle uk-flex-center">
+                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-mobile.svg'; ?>" width="107" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
-                        <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-left uk-visible@m">
+                        <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-left uk-visible@s">
                             <div class="uk-grid-large uk-child-width-auto uk-flex-left" data-uk-grid>
                                 <?php if (!empty($params->get('phone')) || !empty($params->get('email')) || !empty($params->get('fax'))) { ?>
                                     <div>
@@ -154,11 +154,14 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                                 <?php } ?>
                             </div>
                         </div>
+                        <div class="uk-width-auto uk-hidden@s uk-flex uk-flex-middle uk-text-black">
+                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-search fa-fw fa-2x uk-margin-small-left"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="uk-background-white" data-uk-sticky="start: 200%; animation: uk-animation-slide-top">
+        <div class="uk-background-white uk-visible@s" data-uk-sticky="start: 200%; animation: uk-animation-slide-top">
             <div class="uk-container">
                 <div class="uk-grid-collapse" data-uk-grid>
                     <div class="uk-width-expand"><jdoc:include type="modules" name="nav" style="html5" /></div>
@@ -168,7 +171,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
         </div>
 	</header>
     <jdoc:include type="modules" name="mobilesearch" style="html5" />
-    <?php if ($pageparams->get('show_page_heading', 0)) { ?>
+    <?php if ($pageparams->get('show_page_heading', 0) && $pageclass != 'home') { ?>
         <section class="uk-padding-large uk-padding-remove-horizontal uk-background-secondary uk-position-relative pageHead">
             <span class="uk-position-cover" id="hParticles"></span>
             <div class="uk-position-relative">
@@ -200,7 +203,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                     <jdoc:include type="component" />
                 </article>
                 <?php if ($this->countModules('sideend', true)) : ?>
-                    <aside class="uk-width-1-1 uk-width-1-4@m"><jdoc:include type="modules" name="sideend" style="none" /></aside>
+                    <aside class="uk-width-1-1 uk-width-1-4@s uk-visible@s"><jdoc:include type="modules" name="sideend" style="none" /></aside>
                 <?php endif; ?>
             </div>
         </div>
@@ -209,17 +212,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
         <jdoc:include type="modules" name="bottomout" style="html5" />
     <?php endif; ?>
     <footer class="uk-background-secondary uk-position-relative">
-        <span class="uk-position-cover" id="fParticles"></span>
         <div class="uk-padding uk-padding-remove-horizontal uk-position-relative modules">
             <div class="uk-container">
                 <div class="uk-grid-larg uk-flex-between uk-child-width-auto" data-uk-grid>
-                    <div class="uk-width-expand">
-                        <div class="uk-margin-bottom borderedSection">
+                    <div class="uk-width-1-1 uk-width-expand@s">
+                        <div class="uk-margin-bottom borderedSection uk-text-center uk-text-right@m">
                             <span class="uk-display-block uk-text-primary uk-h4 uk-margin-small-bottom font">با ما تماس بگیرید</span>
-                            <a href="" class="uk-display-block uk-text-white uk-text-right font ltr">(+۹۸۲۱) ۳۴۵۶ ۸۷۵۹</a>
+                            <a href="" class="uk-display-block uk-text-white font ltr">(+۹۸۲۱) ۳۴۵۶ ۸۷۵۹</a>
                         </div>
                         <jdoc:include type="modules" name="newsletter" style="html5" />
-                        <ul class="uk-grid-small uk-child-width-auto uk-margin-medium-top socials" data-uk-grid>
+                        <ul class="uk-grid-small uk-child-width-auto uk-margin-medium-top socials uk-flex-center uk-flex-right@m" data-uk-grid>
                             <?php foreach ($params->get('socials') as $item) : ?>
                                 <?php if ($item->icon != '') { ?>
                                     <li><a href="<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" data-uk-tooltip class="uk-flex uk-flex-center uk-flex-middle" target="_blank" id="<?php echo $item->title; ?>"><i class="fab fa-<?php echo $item->icon; ?>"></i></a></li>
@@ -263,8 +265,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 <div class="uk-width-expand">
                     <div class="offcanvasTop uk-box-shadow-small uk-position-relative uk-flex-stretch">
                         <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
-                            <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><i class="far fa-chevron-right"></i></a></div>
-                            <div class="uk-flex uk-width-expand uk-flex uk-flex-right uk-flex-middle uk-text-white logo">logo here</div>
+                            <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove uk-text-black"><i class="far fa-chevron-right"></i></a></div>
+                            <div class="logo uk-flex uk-flex-center uk-flex-column uk-width-expand">
+                                <span class="uk-display-block font uk-text-tiny uk-text-black">حمل و نقل بین المللی</span>
+                                <span class="f900 font uk-display-block uk-text-black">مسیر طلایی راسا</span>
+                            </div>
                         </div>
                     </div>
                     <div class="uk-padding-small"><jdoc:include type="modules" name="offcanvas" style="xhtml" /></div>

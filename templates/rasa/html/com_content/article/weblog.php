@@ -142,11 +142,11 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 	<?php echo $this->item->event->afterDisplayContent; ?>
 </div>
 <hr class="uk-margin-medium">
-<div class="uk-grid-small uk-grid-match" data-uk-grid>
-    <div class="uk-width-1-1 uk-width-auto@m uk-flex uk-flex-middle uk-text-center uk-text-right@m">
+<div class="uk-grid-column-small uk-grid-row-medium uk-grid-match" data-uk-grid>
+    <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-text-center uk-text-right@m">
         <span class="uk-display-block uk-text-tiny font f500 uk-text-muted"><?php echo JText::sprintf('SHARETHIS'); ?></span>
     </div>
-    <div class="uk-width-1-1 uk-width-expand@m">
+    <div class="uk-width-1-1 uk-width-expand@s">
         <ul class="uk-grid-small uk-child-width-1-4 uk-child-width-auto@m" data-uk-grid>
             <li><a href="https://www.facebook.com/sharer.php?u=<?php echo JURI::current(); ?>" target="_blank" class="socialButton uk-button uk-border-rounded uk-box-shadow-small uk-flex uk-flex-center uk-flex-middle uk-padding-small uk-button-facebook"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://twitter.com/share?url=<?php echo JURI::current(); ?>&text=<?php echo $this->escape($this->item->title); ?>" target="_blank" class="socialButton uk-button uk-border-rounded uk-box-shadow-small uk-flex uk-flex-center uk-flex-middle uk-padding-small uk-button-twitter"><i class="fab fa-twitter"></i></a></li>
@@ -154,7 +154,7 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
             <li><a href="https://wa.me/?text=<?php echo JURI::current(); ?>" target="_blank" class="socialButton uk-button uk-border-rounded uk-box-shadow-small uk-flex uk-flex-center uk-flex-middle uk-padding-small uk-button-whatsapp"><i class="fab fa-whatsapp"></i></a></li>
         </ul>
     </div>
-    <div class="uk-width-1-1 uk-width-auto@m uk-flex uk-flex-middle readmore">
-        <a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->slug)); ?>" class="uk-display-inline-block font"><?php echo JText::sprintf('BACKTO').' '.$this->item->category_title; ?><i class="far fa-chevron-double-left"></i></a>
+    <div class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-middle uk-flex-center readmore">
+        <a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->slug)); ?>" class="uk-display-inline-block uk-text-center font"><?php echo JText::sprintf('BACKTO').' '.$this->item->category_title; ?><i class="far fa-chevron-double-left"></i></a>
     </div>
 </div>

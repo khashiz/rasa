@@ -20,7 +20,8 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="presetcolor" type="color" label="NTP_PRESETCOLOR" />
+				<field name="presetcolor" type="color" label="NTP_PRESET_COLOR" />
+				<field name="homedesc" type="editor" label="NTP_HOME_DESC" filter="safehtml" />
 			</fieldset>
 			<fieldset name="CONTACT">
 				<field name="email" type="text" label="NTP_EMAIL" />

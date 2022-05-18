@@ -15,7 +15,7 @@ $list = $displayData['list'];
 
 ?>
 <nav class="pagination__wrapper" aria-label="<?php echo Text::_('JLIB_HTML_PAGINATION'); ?>">
-	<ul class="uk-grid-small uk-child-width-auto pagination" data-uk-grid>
+	<ul class="uk-grid-small uk-child-width-auto uk-flex-center uk-flex-right@m pagination" data-uk-grid>
 		<?php /* echo $list['start']['data']; */ ?>
 		<?php echo $list['previous']['data']; ?>
 

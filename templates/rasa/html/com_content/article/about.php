@@ -110,36 +110,41 @@ endforeach;
             <div class="uk-text-white font f600 uk-margin-large-bottom">
                 <p>ما در شرکت حمل و نقل بین المللی مسیر طلایی راسا ، پاسخگوی تمامی نیاز های شما در زمینه حمل و نقل به تمام نقاط دنیا هستیم.</p>
             </div>
-            <div class="uk-child-width-1-5 uk-flex-center uk-text-center uk-grid-small" data-uk-grid>
-                <div>
-                    <a class="uk-display-block uk-link-reset" href="#">
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل هوایی</span>
-                    </a>
+            <div class="uk-position-relative uk-visible-toggle" data-uk-slider>
+                <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-5@s uk-text-center uk-grid uk-grid-small">
+                    <div>
+                        <a class="uk-display-block uk-link-reset" href="#">
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل هوایی</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-display-block uk-link-reset" href="#">
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-ship fa-fw fa-3x"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل دریایی</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-display-block uk-link-reset" href="#">
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-container fa-fw fa-3x"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل زمینی</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-display-block uk-link-reset" href="#">
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترخیص کالا</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-display-block uk-link-reset" href="#">
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-globe fa-fw fa-3x"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت داخلی و خارجی</span>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a class="uk-display-block uk-link-reset" href="#">
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-ship fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل دریایی</span>
-                    </a>
-                </div>
-                <div>
-                    <a class="uk-display-block uk-link-reset" href="#">
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-container fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">حمل و نقل زمینی</span>
-                    </a>
-                </div>
-                <div>
-                    <a class="uk-display-block uk-link-reset" href="#">
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترخیص کالا</span>
-                    </a>
-                </div>
-                <div>
-                    <a class="uk-display-block uk-link-reset" href="#">
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-globe fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت داخلی و خارجی</span>
-                    </a>
+                <div class="uk-light">
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-hidden@s"></ul>
                 </div>
             </div>
         </div>

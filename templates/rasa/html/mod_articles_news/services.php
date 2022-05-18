@@ -17,7 +17,7 @@ if (!$list)
 }
 
 ?>
-<section class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
+<section class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top uk-overflow-hidden">
     <div class="uk-margin-large-bottom uk-text-center styledTitle">
         <span>سایر خدمات</span>
         <h2>خدمات دیگری که ارائه می‌کنیم</h2>

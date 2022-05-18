@@ -17,7 +17,7 @@ if (!$list)
 }
 
 ?>
-<section class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top">
+<section class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top uk-overflow-hidden">
     <div class="uk-margin-large-bottom uk-text-center styledTitle">
         <span>بلاگ</span>
         <h2>آخرین اخبار و مقالات راسا</h2>
