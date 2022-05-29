@@ -7,7 +7,7 @@
 @success50: #f0fdf4;
 @font-face {
   font-family: 'iransansxv';
-  src: url('../font/iransansxv.woff');
+  src: url('../font/IRANSansXV.woff');
   font-display: fallback;
 }
 .font{font-family: 'iransansxv', sans-serif}
@@ -203,7 +203,24 @@ hr{
     }
   }
 }
-
+svg{
+  &.logo{
+    .primary{
+      fill: @primary;
+    }
+    &.dark{
+      .secondary{
+        fill: #000;
+      }
+    }
+    .gradient1{
+      fill: url('#gradient_1');
+    }
+    .gradient2{
+      fill: url('#gradient_2');
+    }
+  }
+}
 header{
   .bar{
     .socials{
@@ -608,7 +625,7 @@ ol{
       color: #fff;
     }
     &.mainTitle{
-      font-size: 48px;
+      font-size: 36px;
     }
     @media(max-width: 639px){
       font-size: 18px;
@@ -776,21 +793,53 @@ ol{
 .servicesTabs{
   > li{
     > span{
-      background-color: #fff;
       color: #222;
+      padding-bottom: 15px;
+      position: relative;
+      .transition();
       i{
-        color: @primary;
+        color: #ccc;
+        .transition();
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        .transition();
+        .transform(scaleY(0));
+        .border-radius(5px 5px 0 0);
+      }
+    }
+    &:hover{
+      > span{
+        i{
+          color: #aaa;
+        }
+        &:before{
+          background-color: #e9e9e9;
+          .transform(scaleY(1));
+        }
       }
     }
     &.uk-active{
       > span{
-        background-color: @primary;
-        color: #fff;
         i{
-          color: #fff;
+          color: @primary;
+        }
+        &:before{
+          background-color: @primary;
+          .transform(scaleY(1));
         }
       }
     }
+  }
+  &:before{
+    border-bottom: 1px solid #f2f2f2;
   }
 }
 .hasShadow{
@@ -915,6 +964,20 @@ span{
             }
           }
         }
+      }
+    }
+  }
+}
+.uk-dotnav{
+  li{
+    a{
+      border: none;
+      background-color: rgba(0, 0, 0, .4) !important;
+      .transition();
+    }
+    &.uk-active{
+      a{
+        background-color: @primary !important;
       }
     }
   }

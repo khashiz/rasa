@@ -32,6 +32,11 @@ $afterDisplayContent = trim(implode("\n", $results));
 
 $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
+foreach ($this->category->jcfields as $field) :
+	$fieldsValue[$field->name] = $field->value;
+	$fieldsRawValue[$field->name] = $field->rawvalue;
+endforeach;
+
 ?>
 <div class="com-content-category-blog blog" itemscope itemtype="https://schema.org/Blog">
 
@@ -60,10 +65,10 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
 	<?php if (!empty($this->lead_items)) : ?>
         <div class="uk-padding-large uk-padding-remove-horizontal">
-            <div class="uk-container uk-container-small">
+            <div class="uk-container">
                 <div class="uk-margin-bottom uk-text-center styledTitle">
-                    <span>حمل و نقل</span>
-                    <h2>خدمات حمل و نقل بین المللی ما</h2>
+                    <span>خدمات شرکت</span>
+                    <h2>حمل و نقل بین المللی مسیر طلایی راسا</h2>
                 </div>
                 <?php  if ($beforeDisplayContent || $afterDisplayContent || $this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
                     <div class="uk-margin-large-bottom category-desc clearfix uk-text-center font uk-text-black f500">
@@ -76,7 +81,7 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                                 ]
                             ); ?>
                         <?php endif; ?>
-                        <?php echo $beforeDisplayContent; ?>
+                        <?php // echo $beforeDisplayContent; ?>
                         <?php if ($this->params->get('show_description') && $this->category->description) : ?>
                             <?php echo HTMLHelper::_('content.prepare', $this->category->description, '', 'com_content.category'); ?>
                         <?php endif; ?>
@@ -84,10 +89,10 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                     </div>
                 <?php endif; ?>
                 <div class="com-content-category-blog__items blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>">
-                    <ul data-uk-switcher="animation: uk-animation-slide-bottom-small" class="uk-grid uk-grid uk-child-width-1-3 servicesTabs">
+                    <ul class="uk-child-width-expand servicesTabs" data-uk-tab="animation: uk-animation-slide-bottom-small">
                         <?php foreach ($this->lead_items as &$item) : ?>
                             <li>
-                                <span class="uk-flex uk-flex-center uk-flex-middle uk-flex-column uk-border-rounded uk-box-shadow-small uk-padding cursorPointer">
+                                <span class="uk-flex uk-flex-center uk-flex-middle uk-flex-column cursorPointer">
                                     <?php if (!empty(json_decode($item->urls)->urlatext)) { ?>
                                         <i class="far fa-3x fa-fw fa-<?php echo json_decode($item->urls)->urlatext; ?>"></i>
                                     <?php } ?>
@@ -96,51 +101,40 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
                             </li>
                         <?php endforeach; ?>
                     </ul>
-                    <div class="uk-switcher uk-margin-medium-top">
+                    <ul class="uk-switcher uk-margin-medium-top">
                         <?php $leadingcount = 0; ?>
                         <?php foreach ($this->lead_items as &$item) :?>
-                            <div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                            <li class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                                 <?php
                                 $this->item = &$item;
                                 echo $this->loadTemplate('leadingitem');
                                 ?>
-                            </div>
+                            </li>
                             <?php $leadingcount++; ?>
                         <?php endforeach; ?>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
 	<?php endif; ?>
 
-<section class="uk-margin-large-top uk-background-muted uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-background-cover uk-background-center-center hasShadow benefits" style="background-image: url(https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80); background-repeat: no-repeat; background-position-y: calc(-360.112px); background-size: 1903px 1269px;" data-uk-parallax="bgy: -200">
+<section class="uk-background-muted uk-padding-large uk-padding-remove-horizontal uk-position-relative uk-background-cover uk-background-center-center hasShadow benefits" style="background-image: url('<?php echo 'images/services/large/'.$fieldsValue['catbriefbg'] ?>'); background-repeat: no-repeat; background-position-y: calc(-360.112px); background-size: 1903px 1269px;" data-uk-parallax="bgy: -200">
     <div class="uk-container uk-container-small uk-position-relative">
         <div class="uk-text-center">
-            <div class="uk-margin-medium-bottom uk-text-center styledTitle">
-                <span>مزایای خدمات ما</span>
-                <h2 class="light">چرا مسیر طلایی راسا را انتخاب کنیم ؟</h2>
-            </div>
-            <div class="uk-text-white font f600 uk-margin-large-bottom">
-                <p>ما در شرکت حمل و نقل بین المللی مسیر طلایی راسا ، بار شما را در هر مقداری از خرده بار تا بار فله ای یا کانتینری به مقصد می رسانیم !</p>
+            <div class="uk-margin-large-bottom uk-text-center styledTitle">
+                <span><?php echo $fieldsValue['catsmalltitle']; ?></span>
+                <h2 class="light"><?php echo $fieldsValue['catmaintitle']; ?></h2>
             </div>
             <div class="uk-position-relative uk-visible-toggle" data-uk-slider>
                 <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@s uk-text-center uk-grid uk-grid-small">
-                    <div>
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-headset fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">کارشناسان پشتیبانی ۲۴ ساعته</span>
-                    </div>
-                    <div>
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-truck-ramp-box fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">انجام تشریفات و خدمات گمرکی</span>
-                    </div>
-                    <div>
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-plane-departure fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ترانزیت کالا به تمام نقاط دنیا</span>
-                    </div>
-                    <div>
-                        <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="far fa-circle-info fa-fw fa-3x"></i></span>
-                        <span class="uk-margin-top uk-text-white title font f700 uk-display-block">ارسال آپدیت های لازم در طول مسیر</span>
-                    </div>
+	                <?php $items = explode('\n', $fieldsValue['icons']); ?>
+                    <?php for($i = 0; $i < count($items)-1; $i++) { ?>
+                        <?php $item = explode(',', $items[$i]); ?>
+                        <div>
+                            <span class="uk-margin-auto uk-border-circle uk-box-shadow-small uk-flex uk-flex-middle uk-flex-center uk-text-primary icon"><i class="<?php echo $item[0]; ?>"></i></span>
+                            <span class="uk-margin-top uk-text-white title font f700 uk-display-block"><?php echo $item[1]; ?></span>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="uk-light">
                     <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-hidden@s"></ul>
@@ -163,10 +157,6 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 		<?php endif; ?>
 		<div class="uk-padding-large uk-padding-remove-horizontal com-content-category-blog__items blog-items <?php echo $blogClass; ?>">
             <div class="uk-container">
-                <div class="uk-margin-medium-bottom uk-text-center styledTitle">
-                    <span>خدمات دیگر</span>
-                    <h2>همراه شما در واردات و صادرات هستیم !</h2>
-                </div>
                 <div class="uk-child-width-1-1 uk-child-width-1-3@s uk-flex-center" data-uk-grid>
                     <?php foreach ($this->intro_items as $key => &$item) : ?>
                         <div class="com-content-category-blog__item blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -206,4 +196,26 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 			</div>
 		</div>
 	<?php endif; ?>
+    <div class="uk-padding-large uk-padding-remove-horizontal com-content-category-blog__items blog-items">
+        <div class="uk-container">
+            <div class="uk-margin-medium-bottom uk-text-center styledTitle">
+                <span><?php echo JText::_('OTHER_SERVICES'); ?></span>
+                <h2><?php echo JText::_('WITH_YOU_IN_EXPORTS'); ?></h2>
+            </div>
+            <div class="uk-child-width-1-1 uk-child-width-1-3@s uk-flex-center" data-uk-grid>
+	            <?php $otheritems = explode('\n', $fieldsValue['otheritems']); ?>
+	            <?php for($j = 0; $j < count($otheritems)-1; $j++) { ?>
+		            <?php $otheritem = explode(',', $otheritems[$j]); ?>
+                    <div class="com-content-category-blog__item blog-item uk-first-column" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+                        <figure class="uk-border-rounded uk-overflow-hidden uk-box-shadow-small item-image"><?php echo $otheritem[1]; ?></figure>
+                        <div class="item-content uk-text-center">
+                            <div class="page-header">
+                                <h2 itemprop="name" class="uk-h4 f700 font uk-flex uk-flex-center"><?php echo $otheritem[0]; ?></h2>
+                            </div>
+                        </div>
+                    </div>
+	            <?php } ?>
+            </div>
+        </div>
+    </div>
 </div>

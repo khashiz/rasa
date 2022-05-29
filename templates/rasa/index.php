@@ -100,7 +100,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x uk-margin-small-right"></i></a>
                         </div>
                         <div class="uk-width-auto uk-visible@s">
-                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-rtl.svg'; ?>" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-rtl'; ?>" class="logo dark" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
                         <div class="uk-width-expand uk-hidden@s uk-flex uk-flex-middle uk-flex-center">
                             <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-mobile.svg'; ?>" width="107" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
@@ -217,8 +217,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 <div class="uk-grid-larg uk-flex-between uk-child-width-auto" data-uk-grid>
                     <div class="uk-width-1-1 uk-width-expand@s">
                         <div class="uk-margin-bottom borderedSection uk-text-center uk-text-right@m">
-                            <span class="uk-display-block uk-text-primary uk-h4 uk-margin-small-bottom font">با ما تماس بگیرید</span>
-                            <a href="" class="uk-display-block uk-text-white font ltr">(+۹۸۲۱) ۳۴۵۶ ۸۷۵۹</a>
+                            <span class="uk-display-block uk-text-primary uk-h4 uk-margin-small-bottom font"><?php echo JText::_('CALL_US'); ?></span>
+                            <a href="<?php echo 'tel:'.($this->direction == 'rtl' ? '021' : '+9821').$params->get('phone'); ?>" class="uk-display-block uk-text-white font ltr"><?php echo '(+9821) '.$params->get('phone'); ?></a>
                         </div>
                         <jdoc:include type="modules" name="newsletter" style="html5" />
                         <ul class="uk-grid-small uk-child-width-auto uk-margin-medium-top socials uk-flex-center uk-flex-right@m" data-uk-grid>

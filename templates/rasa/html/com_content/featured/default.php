@@ -26,7 +26,7 @@ $params = $app->getTemplate(true)->params;
         <?php $leadingcount = 0; ?>
         <?php if (!empty($this->lead_items)) : ?>
             <div class="uk-slider-container-offset" data-uk-slider>
-                <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-5@m uk-grid blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>">
+                <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-6@m uk-grid blog-items items-leading <?php echo $this->params->get('blog_class_leading'); ?>">
                     <?php foreach ($this->lead_items as &$item) : ?>
                         <div class="blog-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                             <?php $this->item = & $item; echo $this->loadTemplate('item'); ?>
@@ -34,7 +34,7 @@ $params = $app->getTemplate(true)->params;
                         <?php $leadingcount++; ?>
                     <?php endforeach; ?>
                 </div>
-                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-hidden@s"></ul>
+                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-medium-top uk-hidden@s"></ul>
             </div>
         <?php endif; ?>
 

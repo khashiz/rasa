@@ -61,24 +61,7 @@ if ($paramsFontScheme)
 	}
 }
 
-// Enable assets
-$wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
-	->useStyle('template.active.language')
-	->useStyle('template.offline')
-	->useStyle('template.user')
-	->useScript('template.user')
-	->addInlineStyle(":root {
-		--hue: 214;
-		--template-bg-light: #f0f4fb;
-		--template-text-dark: #495057;
-		--template-text-light: #ffffff;
-		--template-link-color: #2a69b8;
-		--template-special-color: #001B4C;
-		$fontStyles
-	}");
 
-// Override 'template.active' asset to set correct ltr/rtl dependency
-$wa->registerStyle('template.active', '', [], [], ['template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
@@ -88,33 +71,16 @@ $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1)
 $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
 
-if ($this->params->get('logoFile'))
-{
-	$logo = '<img src="' . htmlspecialchars(Uri::root() . $this->params->get('logoFile'), ENT_QUOTES, 'UTF-8') . '" alt="' . $sitename . '">';
-}
-elseif ($this->params->get('siteTitle'))
-{
-	$logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
-}
-else
-{
-	$logo = '<img src="' . $templatePath . '/images/logo.svg" class="logo d-inline-block" alt="' . $sitename . '">';
-}
-
-// Defer font awesome
-$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
-
 
 // Add CSS
 JHtml::_('stylesheet', 'uikit-rtl.min.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'fontawesome.min.css', array('version' => 'auto', 'relative' => true));
-JHtml::_('stylesheet', 'woshe.css', array('version' => 'auto', 'relative' => true));
+JHtml::_('stylesheet', 'rasa.css', array('version' => 'auto', 'relative' => true));
 
 // Add js
 JHtml::_('script', 'uikit.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'uikit-icons.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
-JHtml::_('script', 'persian-datepicker.js', array('version' => 'auto', 'relative' => true));
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

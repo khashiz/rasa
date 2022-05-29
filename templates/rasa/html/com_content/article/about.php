@@ -58,7 +58,6 @@ endforeach;
     <div class="uk-container">
         <?php if ($params->get('show_title')) : ?>
             <div class="uk-margin-medium-bottom uk-text-center styledTitle page-header">
-                <span>حمل و نقل بین المللی</span>
                 <<?php echo $htag; ?> itemprop="headline" class="mainTitle f900">
                     <?php echo $this->escape($this->item->title); ?>
                 </<?php echo $htag; ?>>
@@ -71,6 +70,9 @@ endforeach;
                 <?php if ($isExpired) : ?>
                     <span class="badge bg-warning text-light"><?php echo Text::_('JEXPIRED'); ?></span>
                 <?php endif; ?>
+                <div>
+                    <a href="<?php echo JUri::base(); ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-rtl'; ?>" width="190" height="140" alt="" class="logo dark" data-uk-svg></a>
+                </div>
             </div>
         <?php endif; ?>
         <?php if ($canEdit) : ?>

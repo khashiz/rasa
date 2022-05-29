@@ -32,7 +32,9 @@ if ($params->get('backgroundimage'))
                     <li>
                         <img src="<?php echo (HTMLHelper::cleanImageURL($item->background))->url; ?>" alt="<?php echo $item->title; ?>" class="uk-width-1-1" data-uk-cover>
                         <a href="<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" class="uk-display-block uk-link-reset coverWrapper uk-position-cover">
-                            <span class="cover"></span>
+                            <?php if ($item->shadow) { ?>
+                                <span class="cover"></span>
+                            <?php } ?>
                             <?php if (!empty($item->title) || !empty($item->subtitle)) { ?>
                                 <div class="uk-position-center-right uk-width-1-1">
                                     <div class="uk-container">
@@ -55,8 +57,8 @@ if ($params->get('backgroundimage'))
                 <?php } ?>
             <?php endforeach; ?>
         </ul>
-        <span class="uk-position-center-left uk-padding slideshowArrow cursorPointer uk-visible@s" data-uk-slideshow-item="previous"><i class="fal fa-fw fa-2x fa-chevron-left"></i></span>
-        <span class="uk-position-center-right uk-padding slideshowArrow cursorPointer uk-visible@s" data-uk-slideshow-item="next"><i class="fal fa-fw fa-2x fa-chevron-right"></i></span>
+        <span class="uk-position-center-left uk-padding slideshowArrow uk-text-primary cursorPointer uk-visible@s" data-uk-slideshow-item="previous"><i class="fal fa-fw fa-2x fa-chevron-left"></i></span>
+        <span class="uk-position-center-right uk-padding slideshowArrow uk-text-primary cursorPointer uk-visible@s" data-uk-slideshow-item="next"><i class="fal fa-fw fa-2x fa-chevron-right"></i></span>
         <div class="uk-position-bottom-center uk-position-small uk-light">
             <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin-small-bottom"></ul>
         </div>

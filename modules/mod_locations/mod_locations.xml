@@ -17,13 +17,23 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic" label="COM_MODULES_BASIC_FIELDSET_LABEL">
+				<field name="smalltitle" type="text" label="NTP_SMALL_TITLE" />
+				<field name="maintitle" type="text" label="NTP_MAIN_TITLE" />
+				<field name="spacer1" type="spacer" hr="true" />
 				<field name="locations" type="subform" label="NTP_LOCATIONS" multiple="true" min="1" max="10">
 					<form>
-						<field name="map_url" type="url" label="NTP_MAP_URL" />
+						<field name="type" type="list" label="NTP_MAP_TYPE" default="existing">
+							<option value="existing">NTP_EXISTING</option>
+							<option value="future">NTP_FUTURE</option>
+						</field>
+						<field name="img" type="media" label="NTP_IMAGE" />
 						<field name="title" type="text" label="NTP_TITLE" />
-						<field name="phone" type="textarea" label="NTP_PHONE" />
-						<field name="email" type="text" label="NTP_EMAIL" />
-						<field name="fax" type="text" label="NTP_FAX" />
+						<field name="address" type="textarea" label="NTP_ADDRESS" showon="type:existing" />
+						<field name="map_url" type="url" label="NTP_MAP_URL" showon="type:existing" />
+						<field name="phone" type="textarea" label="NTP_PHONE" showon="type:existing" />
+						<field name="email" type="text" label="NTP_EMAIL" showon="type:existing" />
+						<field name="fax" type="text" label="NTP_FAX" showon="type:existing" />
+						<field name="text" type="text" label="NTP_TEXT" showon="type:future" />
 					</form>
 				</field>
 			</fieldset>

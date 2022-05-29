@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="Rasa Golden Way" confirmBeforeUploading="false">
+    <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="Abadis">
         <serverdata>
@@ -79,6 +80,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Rasa Golden Way">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Salamat Andishan">
         <serverdata>
           <mappings>
@@ -93,6 +101,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Steel Arvin">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="azimuth">
         <serverdata>
           <mappings>
@@ -101,13 +116,6 @@
         </serverdata>
       </paths>
       <paths name="demoiselle">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="steelarvin.com">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
