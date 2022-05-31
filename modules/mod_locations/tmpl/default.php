@@ -61,21 +61,21 @@ $tempParams = $app->getTemplate(true)->params;
                                                     <a href="tel:<?php echo $tempParams->get('phone') ?>">
                                                         <i class="fas fa-fw fa-phone"></i>
                                                         <span class="title"><?php echo JText::_('PHONE').' : '; ?></span>
-                                                        <span class="uk-display-inline-block ltr uk-text-right value"><?php echo $item->phone; ?></span>
+                                                        <span class="uk-display-inline-block ltr uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> value"><?php echo $item->phone; ?></span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="">
                                                         <i class="fas fa-fw fa-fax"></i>
                                                         <span class="title"><?php echo JText::_('FAX').' : '; ?></span>
-                                                        <span class="uk-display-inline-block ltr uk-text-right value"><?php echo $item->fax; ?></span>
+                                                        <span class="uk-display-inline-block ltr uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> value"><?php echo $item->fax; ?></span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="mailto:<?php echo $item->email; ?>">
                                                         <i class="fas fa-fw fa-envelope-open-text"></i>
                                                         <span class="title"><?php echo JText::_('EMAIL').' : '; ?></span>
-                                                        <span class="uk-display-inline-block ltr uk-text-right value"><?php echo $item->email; ?></span>
+                                                        <span class="uk-display-inline-block ltr uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> value"><?php echo $item->email; ?></span>
                                                     </a>
                                                 </li>
                                             </ul>

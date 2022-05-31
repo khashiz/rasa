@@ -46,7 +46,7 @@ if ($params->get('backgroundimage'))
                                         <?php } ?>
                                         <div>
                                             <object class="uk-margin-top uk-display-inline-block" data-uk-slideshow-parallax="opacity: 0,1,0; x: 450,-450;">
-                                                <a href="" class="uk-button uk-button-primary uk-button-small uk-border-pill uk-text-white">اطلاعات بیشتر</a>
+                                                <a href="<?php echo $item->link; ?>" class="uk-button uk-button-primary uk-button-small uk-border-pill uk-text-white"><?php echo JText::_('MORE_INFO'); ?></a>
                                             </object>
                                         </div>
                                     </div>

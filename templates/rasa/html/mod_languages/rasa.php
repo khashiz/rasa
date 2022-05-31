@@ -18,7 +18,6 @@ $wa = $app->getDocument()->getWebAssetManager();
 $wa->registerAndUseStyle('mod_languages', 'mod_languages/template.css');
 ?>
 <div>
-
 <?php if ($headerText) : ?>
 	<div class="mod-languages__pretext pretext"><p><?php echo $headerText; ?></p></div>
 <?php endif; ?>

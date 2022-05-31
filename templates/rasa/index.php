@@ -30,23 +30,26 @@ $pageparams = $menu->getParams( $active->id );
 $pageclass = $pageparams->get( 'pageclass_sfx' );
 
 // Add CSS
-if ($this->direction == 'rtl') {
-    JHtml::_('stylesheet', 'uikit-rtl.min.css', array('version' => 'auto', 'relative' => true));
-} else {
-    JHtml::_('stylesheet', 'uikit.min.css', array('version' => 'auto', 'relative' => true));
-}
 JHtml::_('stylesheet', 'fontawesome.min.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'brands.min.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'light.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'regular.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'solid.min.css', array('version' => 'auto', 'relative' => true));
-JHtml::_('stylesheet', 'rasa.css', array('version' => 'auto', 'relative' => true));
+if ($this->direction == 'rtl') {
+    JHtml::_('stylesheet', 'uikit-rtl.min.css', array('version' => 'auto', 'relative' => true));
+	JHtml::_('stylesheet', 'rasa.css', array('version' => 'auto', 'relative' => true));
+} else {
+    JHtml::_('stylesheet', 'uikit.min.css', array('version' => 'auto', 'relative' => true));
+	JHtml::_('stylesheet', 'rasa-ltr.css', array('version' => 'auto', 'relative' => true));
+}
+
+JHtml::_('stylesheet', 'plyr.css', array('version' => 'auto', 'relative' => true));
 
 // Add js
 JHtml::_('script', 'uikit.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'uikit-icons.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'particles.min.js', array('version' => 'auto', 'relative' => true));
-JHtml::_('script', 'plyr.js', array('version' => 'auto', 'relative' => true));
+JHtml::_('script', 'plyr.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
 
 // Detecting Active Variables
@@ -78,7 +81,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 <div>
                     <div class="uk-child-width-auto uk-flex-between" data-uk-grid>
                         <div class="uk-flex uk-flex-middle">
-                            <span class="uk-text-tiny uk-text-muted font uk-display-inline-block uk-margin-left">ما را دنبال کنبد :</span>
+                            <span class="uk-text-tiny uk-text-muted font uk-display-inline-block uk-margin-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>"><?php echo JText::_('FOLLOW_US').' :'; ?></span>
                             <ul class="uk-grid-small uk-child-width-auto socials" data-uk-grid>
                                 <?php foreach ($params->get('socials') as $item) : ?>
                                     <?php if ($item->icon != '') { ?>
@@ -97,16 +100,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 <div class="wrapper">
                     <div class="uk-grid-collapse" data-uk-grid>
                         <div class="uk-width-auto uk-hidden@s uk-flex uk-flex-middle uk-text-black">
-                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x uk-margin-small-right"></i></a>
+                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>"></i></a>
                         </div>
                         <div class="uk-width-auto uk-visible@s">
-                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-rtl'; ?>" class="logo dark" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-'.$this->direction; ?>" class="logo dark" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
                         <div class="uk-width-expand uk-hidden@s uk-flex uk-flex-middle uk-flex-center">
                             <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-mobile.svg'; ?>" width="107" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
-                        <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-left uk-visible@s">
-                            <div class="uk-grid-large uk-child-width-auto uk-flex-left" data-uk-grid>
+                        <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?> uk-visible@s">
+                            <div class="uk-grid-large uk-child-width-auto uk-flex-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>" data-uk-grid>
                                 <?php if (!empty($params->get('phone')) || !empty($params->get('email')) || !empty($params->get('fax'))) { ?>
                                     <div>
                                         <div class="uk-child-width-auto uk-grid-medium uk-grid-divider" data-uk-grid>
@@ -155,7 +158,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             </div>
                         </div>
                         <div class="uk-width-auto uk-hidden@s uk-flex uk-flex-middle uk-text-black">
-                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-search fa-fw fa-2x uk-margin-small-left"></i></a>
+                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-search fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>"></i></a>
                         </div>
                     </div>
                 </div>
@@ -216,12 +219,12 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
             <div class="uk-container">
                 <div class="uk-grid-larg uk-flex-between uk-child-width-auto" data-uk-grid>
                     <div class="uk-width-1-1 uk-width-expand@s">
-                        <div class="uk-margin-bottom borderedSection uk-text-center uk-text-right@m">
+                        <div class="uk-margin-bottom borderedSection uk-text-center uk-text-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>@m">
                             <span class="uk-display-block uk-text-primary uk-h4 uk-margin-small-bottom font"><?php echo JText::_('CALL_US'); ?></span>
                             <a href="<?php echo 'tel:'.($this->direction == 'rtl' ? '021' : '+9821').$params->get('phone'); ?>" class="uk-display-block uk-text-white font ltr"><?php echo '(+9821) '.$params->get('phone'); ?></a>
                         </div>
                         <jdoc:include type="modules" name="newsletter" style="html5" />
-                        <ul class="uk-grid-small uk-child-width-auto uk-margin-medium-top socials uk-flex-center uk-flex-right@m" data-uk-grid>
+                        <ul class="uk-grid-small uk-child-width-auto uk-margin-medium-top socials uk-flex-center uk-flex-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>@m" data-uk-grid>
                             <?php foreach ($params->get('socials') as $item) : ?>
                                 <?php if ($item->icon != '') { ?>
                                     <li><a href="<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" data-uk-tooltip class="uk-flex uk-flex-center uk-flex-middle" target="_blank" id="<?php echo $item->title; ?>"><i class="fab fa-<?php echo $item->icon; ?>"></i></a></li>
@@ -231,20 +234,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                     </div>
                     <jdoc:include type="modules" name="footer" style="html5" />
                     <div class="uk-width-1-1 uk-width-1-4@m help">
-                        <h4>به کمک نیاز دارید ؟</h4>
-<!--                        <div class="uk-cover-container uk-margin-bottom">-->
-<!--                            <canvas width="400" height="150"></canvas>-->
-<!--                            <img src="images/footer.png" alt="" uk-cover>-->
-<!--                        </div>-->
+                        <h4><?php echo JText::_('NEED_HELP'); ?></h4>
                         <div class="uk-text-small uk-text-muted font">
-                            <p>کارشناسان زبده ما آماده اند تا شما را برای دریافت بهترین خدمات راهنمایی کنند. کافیست تا درخواست خود را براما ارسال نمایید.</p>
-                            <a href="#" class="uk-display-inline-block font">ارسال درخواست<i class="far fa-chevron-double-left"></i></a>
+                            <p><?php echo JText::_('REQUEST_TEXT'); ?></p>
+                            <a href="#" class="uk-display-inline-block font"><?php echo JText::_('SEND_REQUEST'); ?><i class="far fa-chevron-double-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="uk-text-center uk-text-right@m  uk-position-relative copyright">
+        <div class="uk-text-center uk-text-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>@m  uk-position-relative copyright">
             <div class="uk-container">
                 <div class="uk-padding uk-padding-remove-horizontal wrapper">
                     <div class="uk-grid-row-collapse uk-grid-column-medium" data-uk-grid>
@@ -267,8 +266,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                         <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
                             <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove uk-text-black"><i class="far fa-chevron-right"></i></a></div>
                             <div class="logo uk-flex uk-flex-center uk-flex-column uk-width-expand">
-                                <span class="uk-display-block font uk-text-tiny uk-text-black">حمل و نقل بین المللی</span>
-                                <span class="f900 font uk-display-block uk-text-black">مسیر طلایی راسا</span>
+                                <span class="uk-display-block font uk-text-tiny uk-text-black"><?php echo JText::_('INTERNATIONAL_TRANSPORT'); ?></span>
+                                <span class="f900 font uk-display-block uk-text-black"><?php echo $sitename; ?></span>
                             </div>
                         </div>
                     </div>

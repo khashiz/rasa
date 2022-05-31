@@ -19,13 +19,13 @@ if (!$list)
 ?>
 <section class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-top uk-overflow-hidden">
     <div class="uk-margin-large-bottom uk-text-center styledTitle">
-        <span>سایر خدمات</span>
-        <h2>خدمات دیگری که ارائه می‌کنیم</h2>
+        <span><?php echo JText::_('SAYER_SERVICES'); ?></span>
+        <h2><?php echo $module->title; ?></h2>
     </div>
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
         <div class="uk-slider-container-offset" data-uk-slider>
             <div class="uk-position-relative uk-visible-toggle">
-                <div class="uk-slider-items uk-child-width-1-1 uk-child-width-1-4@s uk-grid">
+                <div class="uk-slider-items uk-child-width-1-1 uk-child-width-1-5@s uk-grid">
                     <?php foreach ($list as $item) : ?>
                         <div class="mod-articlesnews__item" itemscope itemtype="https://schema.org/Article">
                             <?php require ModuleHelper::getLayoutPath('mod_articles_news', '_serviceitem'); ?>

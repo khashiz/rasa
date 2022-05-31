@@ -15,6 +15,12 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\WebAsset\WebAssetManager;
 
+if (JFactory::getLanguage()->isRtl()){
+    $direction = 'left';
+} else {
+	$direction = 'right';
+}
+
 ?>
 <nav class="mod-breadcrumbs__wrapper" aria-label="<?php echo htmlspecialchars($module->title, ENT_QUOTES, 'UTF-8'); ?>">
 	<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="uk-padding-remove uk-flex uk-flex-center uk-margin-remove uk-text-zero breadcrumb">
@@ -47,7 +53,7 @@ use Joomla\CMS\WebAsset\WebAssetManager;
 				else :
 					$breadcrumbItem = '<span class="font f700 uk-text-tiny uk-text-primary">' . $item->name . '</span>';
 				endif;
-				echo '<li class="mod-breadcrumbs__item breadcrumb-item uk-flex uk-text-white' . $class . '">' . $breadcrumbItem . '<i class="far fa-chevron-left"></i></li>';
+				echo '<li class="mod-breadcrumbs__item breadcrumb-item uk-flex uk-text-white' . $class . '">' . $breadcrumbItem . '<i class="far fa-chevron-'.$direction.'"></i></li>';
 
 			elseif ($show_last) :
 				// Render last item if required.

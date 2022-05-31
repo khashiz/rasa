@@ -27,12 +27,14 @@ $label      = '<label for="mod-finder-searchword' . $module->id . '" class="' . 
 
 $output = '';
 
+if(JFactory::getLanguage()->isRtl()) {$direction = 'left';} else {$direction = 'right';}
+
 if ($params->get('show_button', 0))
 {
 	/* $output .= $label; */
 	$output .= '<div class="uk-position-relative mod-finder__search input-group">';
 	$output .= $input;
-	$output .= '<button class="uk-position-center-left uk-button uk-button-link" type="submit"><span class="fas fa-search"></span></button>';
+	$output .= '<button class="uk-position-center-'.$direction.' uk-button uk-button-link" type="submit"><span class="fas fa-search"></span></button>';
 	$output .= '</div>';
 }
 else
