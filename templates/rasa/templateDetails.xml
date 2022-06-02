@@ -21,7 +21,8 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="presetcolor" type="color" label="NTP_PRESET_COLOR" />
-				<field name="homedesc" type="editor" label="NTP_HOME_DESC" filter="safehtml" />
+				<field name="homedescfa" type="editor" label="NTP_HOME_DESC_FA" filter="safehtml" />
+				<field name="homedescen" type="editor" label="NTP_HOME_DESC_EN" filter="safehtml" />
 			</fieldset>
 			<fieldset name="CONTACT">
 				<field name="email" type="text" label="NTP_EMAIL" />

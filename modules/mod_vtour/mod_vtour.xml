@@ -23,6 +23,12 @@
 	<help key="Site_Modules:_Custom" />
 	<config>
 		<fields name="params">
+			<fieldset name="basic">
+				<field name="spacer" type="spacer" hr="true" />
+				<field name="maintitle" type="text" label="NTP_MAIN_TITLE" />
+				<field name="btnlabel" type="text" label="NTP_BTN_LABEL" />
+				<field name="btnhref" type="text" label="NTP_BTN_HREF" />
+			</fieldset>
 			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
 				<field
 					name="prepare_content"

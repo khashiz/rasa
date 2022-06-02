@@ -103,10 +103,10 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-bars fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>"></i></a>
                         </div>
                         <div class="uk-width-auto uk-visible@s">
-                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-'.$this->direction; ?>" class="logo dark" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                            <a href="<?php echo JUri::base().(JFactory::getLanguage()->isRtl() ? '':'en'); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/sprite.svg#logo-'.$this->direction; ?>" class="logo dark" width="95" height="70" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
                         <div class="uk-width-expand uk-hidden@s uk-flex uk-flex-middle uk-flex-center">
-                            <a href="<?php echo JUri::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-mobile.svg'; ?>" width="107" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                            <a href="<?php echo JUri::base().(JFactory::getLanguage()->isRtl() ? '':'en'); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block uk-padding-small uk-padding-remove-horizontal logo"><img src="<?php echo JUri::base().'images/logo-mobile.svg'; ?>" width="107" height="50" alt="<?php echo $sitename; ?>" data-uk-svg></a>
                         </div>
                         <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?> uk-visible@s">
                             <div class="uk-grid-large uk-child-width-auto uk-flex-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>" data-uk-grid>
@@ -158,7 +158,10 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                             </div>
                         </div>
                         <div class="uk-width-auto uk-hidden@s uk-flex uk-flex-middle uk-text-black">
-                            <a href="#hamMenu" data-uk-toggle class="uk-border-rounded uk-flex uk-link-reset"><i class="far fa-search fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>"></i></a>
+                            <a href="#" data-uk-toggle="target: .mobileSearchToggle;" class="uk-border-rounded uk-flex uk-link-reset">
+                                <i class="mobileSearchToggle uk-animation-fade far fa-search fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>"></i>
+                                <i class="mobileSearchToggle uk-animation-fade far fa-times fa-fw fa-2x uk-margin-small-<?php echo $this->direction == 'rtl' ? 'left' : 'right'; ?>" hidden></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -172,8 +175,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 </div>
             </div>
         </div>
+        <div class="uk-box-shadow-small mobileSearch mobileSearchToggle uk-position-absolute uk-width-1-1 uk-animation-slide-bottom-small uk-animation-fast" hidden><jdoc:include type="modules" name="search" style="html5" /></div>
 	</header>
-    <jdoc:include type="modules" name="mobilesearch" style="html5" />
     <?php if ($pageparams->get('show_page_heading', 0) && $pageclass != 'home') { ?>
         <section class="uk-padding-large uk-padding-remove-horizontal uk-background-secondary uk-position-relative pageHead">
             <span class="uk-position-cover" id="hParticles"></span>
@@ -264,7 +267,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
                 <div class="uk-width-expand">
                     <div class="offcanvasTop uk-box-shadow-small uk-position-relative uk-flex-stretch">
                         <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
-                            <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove uk-text-black"><i class="far fa-chevron-right"></i></a></div>
+                            <div class="uk-flex uk-width-1-4 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove uk-text-black"><i class="far fa-chevron-<?php echo $this->direction == 'rtl' ? 'right' : 'left'; ?>"></i></a></div>
                             <div class="logo uk-flex uk-flex-center uk-flex-column uk-width-expand">
                                 <span class="uk-display-block font uk-text-tiny uk-text-black"><?php echo JText::_('INTERNATIONAL_TRANSPORT'); ?></span>
                                 <span class="f900 font uk-display-block uk-text-black"><?php echo $sitename; ?></span>

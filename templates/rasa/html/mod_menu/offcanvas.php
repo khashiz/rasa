@@ -106,4 +106,6 @@ if ($tagId = $params->get('tag_id', ''))
 		echo '</li>';
 	}
 }
-?></ul>
+?>
+<?php echo JHtml::_('content.prepare', '{loadposition langoffcanvas}'); ?>
+</ul>

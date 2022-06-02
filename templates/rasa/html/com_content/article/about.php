@@ -113,7 +113,7 @@ endforeach;
         <?php if ((int) $params->get('urls_position', 0) === 0) : ?>
             <?php echo $this->loadTemplate('links'); ?>
         <?php endif; ?>
-    <div itemprop="articleBody" class="font f500 uk-text-small uk-text-black com-content-article__body">
+    <div itemprop="articleBody" class="font f500 uk-text-small uk-text-black uk-text-justify com-content-article__body">
         <?php echo $this->item->text; ?>
     </div>
 

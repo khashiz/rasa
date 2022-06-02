@@ -17,11 +17,11 @@ $params = $app->getTemplate(true)->params;
     <div class="uk-container blog-featured" itemscope itemtype="https://schema.org/Blog">
         <?php if ($this->params->get('show_page_heading') != 0) : ?>
             <div class="uk-margin-bottom uk-text-center styledTitle page-header">
-                <span>حمل و نقل بین المللی</span>
+                <span><?php echo JText::_('INTERNATIONAL_TRANSPORT'); ?></span>
                 <h1 itemprop="headline" class="mainTitle f900"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
             </div>
         <?php endif; ?>
-        <div class="uk-margin-large-bottom uk-text-center font uk-text-black f500"><?php echo $params->get('homedesc'); ?></div>
+        <div class="uk-margin-large-bottom uk-text-center font uk-text-black f500"><?php echo $params->get('homedesc'.(JFactory::getLanguage()->isRtl() ? 'fa':'en')); ?></div>
 
         <?php $leadingcount = 0; ?>
         <?php if (!empty($this->lead_items)) : ?>

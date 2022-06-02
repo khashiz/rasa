@@ -26,7 +26,7 @@ $layoutAttr = [
 	'alt'      => empty($images->image_fulltext_alt) && empty($images->image_fulltext_alt_empty) ? false : $images->image_fulltext_alt,
 ];
 ?>
-<figure class="uk-border-rounded uk-overflow-hidden uk-box-shadow-small <?php echo $this->escape($imgclass); ?> item-image">
+<figure class="uk-border-rounded uk-overflow-hidden uk-box-shadow-small uk-margin-medium-bottom <?php echo $this->escape($imgclass); ?> item-image">
 	<?php echo LayoutHelper::render('joomla.html.image', $layoutAttr); ?>
 	<?php if (isset($images->image_fulltext_caption) && $images->image_fulltext_caption !== '') : ?>
 		<figcaption class="caption"><?php echo $this->escape($images->image_fulltext_caption); ?></figcaption>

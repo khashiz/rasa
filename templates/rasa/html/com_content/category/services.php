@@ -67,8 +67,8 @@ endforeach;
         <div class="uk-padding-large uk-padding-remove-horizontal">
             <div class="uk-container">
                 <div class="uk-margin-bottom uk-text-center styledTitle">
-                    <span>خدمات شرکت</span>
-                    <h2>حمل و نقل بین المللی مسیر طلایی راسا</h2>
+                    <span><?php echo JText::_('OUR_SERVICES'); ?></span>
+                    <h2><?php echo JText::_('FULL_TITLE'); ?></h2>
                 </div>
                 <?php  if ($beforeDisplayContent || $afterDisplayContent || $this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
                     <div class="uk-margin-large-bottom category-desc clearfix uk-text-center font uk-text-black f500">

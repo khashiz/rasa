@@ -19,7 +19,7 @@ if (!$list)
 <?php foreach ($list as $item) : ?>
 	<li itemscope itemtype="https://schema.org/Article">
 		<a href="<?php echo $item->link; ?>" itemprop="url" class="uk-text-small font f600 uk-flex">
-            <i class="far fa-chevron-double-left"></i>
+            <i class="far fa-chevron-double-<?php echo JFactory::getLanguage()->isRtl() ? 'left':'right'; ?>"></i>
 			<span itemprop="name">
 				<?php echo $item->title; ?>
 			</span>

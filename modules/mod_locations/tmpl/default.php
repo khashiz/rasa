@@ -40,9 +40,11 @@ $tempParams = $app->getTemplate(true)->params;
                         <div>
                             <div class="uk-height-1-1 wrapper">
                                 <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
+                                    <?php /* ?>
                                     <div class="uk-width-1-1">
                                         <img src="<?php echo (HTMLHelper::cleanImageURL($item->img))->url; ?>" alt="<?php echo $item->title; ?>" class="uk-width-1-1">
                                     </div>
+                                    <?php */ ?>
                                     <div class="uk-width-1-1 uk-width-auto@s">
                                         <iframe src="<?php echo $item->map_url; ?>" width="220" height="250" class="uk-height-1-1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
@@ -88,9 +90,11 @@ $tempParams = $app->getTemplate(true)->params;
                         <div>
                             <div class="uk-height-1-1 wrapper">
                                 <div class="uk-grid-collapse uk-height-1-1" data-uk-grid>
+                                    <?php /* ?>
                                     <div class="uk-width-1-1">
                                         <img src="<?php echo (HTMLHelper::cleanImageURL($item->img))->url; ?>" alt="<?php echo $item->title; ?>" class="uk-width-1-1">
                                     </div>
+                                    <?php */ ?>
                                     <div class="uk-width-expand">
                                         <div class="uk-padding uk-height-1-1">
                                             <h3 class="font f700 uk-position-relative uk-text-black"><?php echo $item->title; ?></h3>
